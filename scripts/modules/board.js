@@ -1,3 +1,4 @@
+import { CELL_COUNT, MIN_SIZE_CELL } from "./const.js";
 import {
   getCanvas,
   getColsInput,
@@ -19,8 +20,8 @@ export const createBoard = () => {
   const ctx = getCtx();
   const offCtx = getOffCtx();
   const offscreenCanvas = getOffscreenCanvas();
-  const cols = parseInt(colsInput.value) || 30;
-  const rows = parseInt(rowsInput.value) || 30;
+  const cols = parseInt(colsInput.value) || CELL_COUNT;
+  const rows = parseInt(rowsInput.value) || CELL_COUNT;
   precomputeNeighbors(cols, rows);
   const containerSize = canvas.width;
   const cellSize = containerSize / cols;
@@ -77,10 +78,10 @@ export const resizeCanvas = () => {
   const rowsInput = getRowsInput();
   const maxWidth = document.body.offsetWidth * 0.9;
   const maxHeight = window.innerHeight * 0.8;
-  const cols = parseInt(colsInput.value) || 30;
-  const rows = parseInt(rowsInput.value) || 30;
-  let cellSize = Math.max(maxWidth / cols, 5);
-  cellSize = Math.max(Math.min(cellSize, maxHeight / rows), 5);
+  const cols = parseInt(colsInput.value) || CELL_COUNT;
+  const rows = parseInt(rowsInput.value) || CELL_COUNT;
+  let cellSize = Math.max(maxWidth / cols, MIN_SIZE_CELL);
+  cellSize = Math.max(Math.min(cellSize, maxHeight / rows), MIN_SIZE_CELL);
   canvas.width = cols * cellSize;
   canvas.height = rows * cellSize;
   offscreenCanvas.width = canvas.width;

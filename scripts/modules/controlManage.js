@@ -1,4 +1,5 @@
 import { animate, resizeCanvas, updateBoard } from "./board.js";
+import { CELL_COUNT } from "./const.js";
 import { drawCell } from "./draw.js";
 import state from "./gameState.js";
 import { debounce } from "./helpers.js";
@@ -52,7 +53,7 @@ export const handleCanvasClick = (event) => {
   const rect = canvas.getBoundingClientRect();
   const x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
-  const cols = parseInt(colsInput.value) || 30;
+  const cols = parseInt(colsInput.value) || CELL_COUNT;
   const cellSize = canvas.width / cols;
   const colClicked = Math.floor(x / cellSize);
   const rowClicked = Math.floor(y / cellSize);
