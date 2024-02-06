@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style/style.css">
+  <script type="module" src="scripts/index.js"></script>
+  <title>Жизнь</title>
+</head>
+
+<body>
+  <div id="controls">
+    <div>
+      <input type="number" id="cols" placeholder="Кол-во клеток по ширине">
+      <input type="number" id="rows" placeholder="Кол-во клеток по высоте">
+    </div>
+    <div>
+      <button id="startGame">Старт</button>
+      <button id="randomize">Случайно</button>
+      <button id="stopGame">Стоп</button>
+    </div>
+  </div>
+
+  <div id="gameBoard">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+</body>
+
+</html>
